@@ -1,0 +1,60 @@
+<!-- File: /home/suprdory/projectshdd/conordle/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Segue Finder</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="topbar">
+        <h1>Segue Finder</h1>
+        <p class="tag">Find a midpoint between words.</p>
+    </header>
+
+    <main class="container">
+        <section class="search-panel" aria-labelledby="search-heading">
+            <h2 id="search-heading">Search for a segue</h2>
+            <form id="segue-form">
+                <div class="row">
+                    <label for="from">From (word)</label>
+                    <div class="input-group">
+                        <input id="from" name="from" type="text" placeholder="e.g. forest" autocomplete="off" />
+                        <button type="button" id="random-from-btn" class="random-btn muted">Random</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="to">To (word)</label>
+                    <div class="input-group">
+                        <input id="to" name="to" type="text" placeholder="e.g. ocean" autocomplete="off" />
+                        <button type="button" id="random-to-btn" class="random-btn muted">Random</button>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button type="submit" id="find-btn">Find segue</button>
+                    <button type="button" id="clear-btn" class="muted">Clear</button>
+                </div>
+            </form>
+
+            <div id="results" class="results" aria-live="polite"></div>
+        </section>
+
+        <aside class="sidebar" aria-labelledby="saved-heading">
+            <h3 id="saved-heading">Segue History</h3>
+            <ul id="saved-list" class="saved-list"></ul>
+
+            <details class="help">
+                <summary>How it works</summary>
+                <p>Vector representation of words allows calculation of pseudo-semantic similarities. The segues are selected to be roughly equidistant to both starter words and closer to those words than they are to each other. </p>
+            </details>
+        </aside>
+    </main>
+
+    <!-- <footer class="footer">
+        <small>Conordle • Coming Soon</small>
+    </footer> -->
+
+    <script src="app.js" defer></script>
+</body>
+</html>
